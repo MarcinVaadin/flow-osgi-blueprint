@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.6.0" name="flow-osgi-blueprint">
+    <feature name="flow-osgi-blueprint" description="Flow OSGi Blueprint" version="${project.version}">
+        <details>Flow OSGi Blueprint feature</details>
+    </feature>
+</features>

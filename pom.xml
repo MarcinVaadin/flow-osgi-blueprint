@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>flow-osgi-blueprint-project</artifactId>
+    <name>Flow OSGi Blueprint</name>
+    <packaging>pom</packaging>
+    <version>23.2-SNAPSHOT</version>
+
+    <parent>
+        <groupId>com.vaadin</groupId>
+        <artifactId>vaadin-parent</artifactId>
+        <version>2.0.5</version>
+    </parent>
+
+    <modules>
+        <module>flow-osgi-blueprint</module>
+        <module>flow-osgi-blueprint-test</module>
+        <module>flow-osgi-blueprint-feature</module>
+        <module>flow-osgi-blueprint-whiteboard</module>
+    </modules>
+
+    <properties>
+        <flow.release.repo.id>vaadin-prereleases</flow.release.repo.id>
+        <flow.release.repo.url>
+            https://maven.vaadin.com/vaadin-prereleases/
+        </flow.release.repo.url>
+
+        <flow.addons.repo.id>vaadin-addons</flow.addons.repo.id>
+        <flow.addons.repo.url>
+            https://maven.vaadin.com/vaadin-addons
+        </flow.addons.repo.url>
+        <flow.version>${project.version}</flow.version>
+
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <dependency>
+                <groupId>com.vaadin</groupId>
+                <artifactId>flow-osgi-blueprint</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vaadin</groupId>
+                <artifactId>flow-osgi-blueprint-feature</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.vaadin</groupId>
+                <artifactId>flow-osgi-blueprint-whiteboard</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.1.0</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>osgi.core</artifactId>
+                <version>8.0.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.apache.felix.framework</artifactId>
+                <version>7.0.5</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.13.2</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <version>5.1.4</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+</project>
